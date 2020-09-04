@@ -5,33 +5,15 @@
 
 #### 软件架构
 软件架构说明
-
+主要借助linux iio子系统提供的接口，实现iio device driver
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
+1.  本驱动已经在ubuntu16.04上测试验证，由于ubuntu16.04内核默认没有将iio 子系统 编译进内核，但是已编译成驱动模块，可以在路径/lib/modules/4.4.0-66-generic/kernel/drivers/iio下找到对应的驱动模块，我们需要这些驱动模块：
+industrialio.ko、industrialio-triggered-event.ko、kfifo_buf.ko、industrialio-triggered-buffer.ko即可
+2.  本次模拟主要涉及三个虚拟设备
+   a.虚拟中断控制器，用于温度告警中断触发、温度数据可读中断触发；
+   b.虚拟iic device设备，用于抽象温度传感器；
+   c.虚拟iio device设备，该设备依附于iic device
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
